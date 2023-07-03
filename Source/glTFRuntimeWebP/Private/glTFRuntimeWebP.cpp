@@ -21,7 +21,7 @@ void FglTFRuntimeWebPModule::StartupModule()
 	ImageIndex = Parser->GetJsonExtensionObjectIndex(JsonTextureObject, "EXT_texture_webp", "source", INDEX_NONE);
 		});
 
-	FglTFRuntimeParser::OnTexturePixels.AddLambda([](TSharedRef<FglTFRuntimeParser> Parser, TSharedRef<FJsonObject> JsonImageObject, TArray64<uint8>& CompressedPixels, int32& Width, int32& Height, TArray64<uint8>& UncompressedPixels)
+	FglTFRuntimeParser::OnTexturePixels.AddLambda([](TSharedRef<FglTFRuntimeParser> Parser, TSharedRef<FJsonObject> JsonImageObject, TArray64<uint8>& CompressedPixels, int32& Width, int32& Height, EPixelFormat& PixelFormat, TArray64<uint8>& UncompressedPixels, const FglTFRuntimeImagesConfig& ImagesConfig)
 		{
 			// skip if already processed
 			if (UncompressedPixels.Num() > 0)
@@ -47,6 +47,8 @@ void FglTFRuntimeWebPModule::StartupModule()
 	{
 		return;
 	}
+
+	PixelFormat = EPixelFormat::PF_B8G8R8A8;
 
 	UncompressedPixels.Append(Pixels, Width * Height * 4);
 	WebPFree(Pixels);
