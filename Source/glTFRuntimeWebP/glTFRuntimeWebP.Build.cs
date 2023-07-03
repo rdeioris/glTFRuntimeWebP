@@ -57,5 +57,9 @@ public class glTFRuntimeWebP : ModuleRules
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_win_x64.lib"));
         }
+	else if (Target.Platform == UnrealTargetPlatform.Linux)
+        {
+            PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_linux_x64.a"));
+        }
     }
 }
