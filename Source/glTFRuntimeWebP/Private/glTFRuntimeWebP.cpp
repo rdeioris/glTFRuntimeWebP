@@ -21,7 +21,7 @@ void FglTFRuntimeWebPModule::StartupModule()
 	ImageIndex = Parser->GetJsonExtensionObjectIndex(JsonTextureObject, "EXT_texture_webp", "source", INDEX_NONE);
 		});
 
-	FglTFRuntimeParser::OnTexturePixels.AddLambda([](TSharedRef<FglTFRuntimeParser> Parser, TSharedRef<FJsonObject> JsonImageObject, TArray64<uint8>& CompressedPixels, int32& Width, int32& Height, EPixelFormat& PixelFormat, TArray64<uint8>& UncompressedPixels, const FglTFRuntimeImagesConfig& ImagesConfig)
+	FglTFRuntimeParser::OnTexturePixels.AddLambda([](TSharedRef<FglTFRuntimeParser> Parser, TSharedRef<FJsonObject> JsonImageObject, const TArray64<uint8>& CompressedPixels, int32& Width, int32& Height, EPixelFormat& PixelFormat, TArray64<uint8>& UncompressedPixels, const FglTFRuntimeImagesConfig& ImagesConfig)
 		{
 			// skip if already processed
 			if (UncompressedPixels.Num() > 0)
