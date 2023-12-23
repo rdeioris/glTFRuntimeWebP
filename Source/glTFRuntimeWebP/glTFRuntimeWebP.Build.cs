@@ -57,21 +57,25 @@ public class glTFRuntimeWebP : ModuleRules
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_win_x64.lib"));
         }
-	else if (Target.Platform == UnrealTargetPlatform.Linux)
+        else if (Target.Platform == UnrealTargetPlatform.Linux)
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_linux_x64.a"));
         }
-	else if (Target.Platform == UnrealTargetPlatform.LinuxArm64)
+        else if (Target.Platform == UnrealTargetPlatform.LinuxArm64)
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_linux_arm64.a"));
         }
-	else if (Target.Platform == UnrealTargetPlatform.Mac)
+        else if (Target.Platform == UnrealTargetPlatform.Mac)
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_mac_arm64.a"));
         }
-	else if (Target.Platform == UnrealTargetPlatform.IOS)
+        else if (Target.Platform == UnrealTargetPlatform.IOS)
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_ios_arm64.a"));
+        }
+        else if (Target.Platform == UnrealTargetPlatform.Android)
+        {
+            PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_android_arm64.a"));
         }
     }
 }
