@@ -1,4 +1,4 @@
-// Copyright Roberto De Ioris
+// Copyright 2023 Roberto De Ioris
 
 #include "glTFRuntimeWebP.h"
 #include "glTFRuntimeParser.h"

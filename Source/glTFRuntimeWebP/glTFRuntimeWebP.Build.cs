@@ -1,4 +1,4 @@
-// Copyright Roberto De Ioris
+// Copyright 2023 Roberto De Ioris
 
 using UnrealBuildTool;
 
@@ -56,26 +56,32 @@ public class glTFRuntimeWebP : ModuleRules
         if (Target.Platform == UnrealTargetPlatform.Win64)
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_win_x64.lib"));
+            PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_demux_win_x64.lib"));
         }
         else if (Target.Platform == UnrealTargetPlatform.Linux)
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_linux_x64.a"));
+            PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_demux_linux_x64.a"));
         }
         else if (Target.Platform == UnrealTargetPlatform.LinuxArm64)
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_linux_arm64.a"));
+            PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_demux_linux_arm64.a"));
         }
         else if (Target.Platform == UnrealTargetPlatform.Mac)
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_mac_arm64.a"));
+            PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_demux_mac_arm64.a"));
         }
         else if (Target.Platform == UnrealTargetPlatform.IOS)
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_ios_arm64.a"));
+            PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_demux_ios_arm64.a"));
         }
         else if (Target.Platform == UnrealTargetPlatform.Android)
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_android_arm64.a"));
+            PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "libwebp", "lib", "libwebp_demux_android_arm64.a"));
         }
     }
 }
