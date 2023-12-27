@@ -17,7 +17,7 @@ Just add the plugin to the project Plugins directory: it will automatically regi
 ## Animations
 WebP animations are supported by generating a Texture2DArray (each slice is a frame) using the LoadWebPAnimationAsTexture2DArray UFunction:
 
-![image](https://github.com/rdeioris/glTFRuntimeWebP/assets/2234592/4ae296fc-6d35-44b1-8f19-c86018dbaba5)
+![image](https://github.com/rdeioris/glTFRuntimeWebP/assets/2234592/bf4e77e8-4328-4292-9eff-f7e6208f823f)
 
 You can eventually switch frames directly from a material:
 
