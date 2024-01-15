@@ -16,7 +16,7 @@ class GLTFRUNTIMEWEBP_API UglTFRuntimeWebPFunctionLibrary : public UBlueprintFun
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintCallable, Category="glTFRuntime|WebP")
+	UFUNCTION(BlueprintCallable, meta = (AutoCreateRefTerm = "ImagesConfig"), Category="glTFRuntime|WebP")
 	static UTexture2DArray* LoadWebPAnimationAsTexture2DArray(UglTFRuntimeAsset* Asset, int32& NumFrames, float& FPS, FLinearColor& BackgroundColor, int32& LoopCount, const FglTFRuntimeImagesConfig& ImagesConfig);
 	
 };
